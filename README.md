@@ -1,7 +1,5 @@
-# Encrypt-Client-Componentize
-
 Encrypt客户端组件化版
-------
+======
 
 版本介绍
 ------
