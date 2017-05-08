@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="type"
+            type="zjm.cst.dhu.basemodule.model.EncryptType" />
+
+        <variable
+            name="downloadListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="encryptListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="detailListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="decryptListener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/module_menu_sl_file_type_item"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="10dp"
+        app:show_mode="pull_out">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="#6959CD">
+
+            <ImageView
+                android:id="@+id/module_menu_iv_file_type_encrypt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:src="@drawable/module_menu_ic_encrypt_black_48dp" />
+
+            <TextView
+                android:id="@+id/module_menu_tv_file_type_encrypt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/module_menu_iv_file_type_encrypt"
+                android:paddingLeft="10dp"
+                android:text="Encrypt this File?"
+                android:textColor="#000"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/module_menu_b_file_type_encrypt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:background="#fff"
+                android:onClick="@{encryptListener}"
+                android:padding="5dp"
+                android:text="Yes,Encrypt!"
+                android:textColor="#000" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:background="#999999">
+
+            <ImageView
+                android:id="@+id/module_menu_iv_file_type_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:src="@drawable/module_menu_ic_file_download_black_48dp" />
+
+            <Button
+                android:id="@+id/module_menu_b_file_type_download"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/module_menu_iv_file_type_download"
+                android:background="#fff"
+                android:onClick="@{downloadListener}"
+                android:padding="5dp"
+                android:text="Download!"
+                android:textColor="#000" />
+
+            <Button
+                android:id="@+id/module_menu_b_file_type_decrypt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:background="#fff"
+                android:onClick="@{decryptListener}"
+                android:padding="10dp"
+                android:text="Decrypt!"
+                android:textColor="#000" />
+
+            <ImageView
+                android:id="@+id/module_menu_iv_file_type_decrypt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/module_menu_b_file_type_decrypt"
+                android:paddingRight="10dp"
+                android:src="@drawable/module_menu_ic_decrypt_black_48dp" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/module_menu_iv_file_type"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/module_menu_background_type_main" />
+
+            <TextView
+                android:id="@+id/module_menu_tv_ll_file_type_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="24dp"
+                android:paddingTop="19dp"
+                android:text="@{type.name}"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <ImageView
+                android:id="@+id/module_menu_iv_file_type_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:onClick="@{detailListener}"
+                android:src="@drawable/module_menu_ic_details_black_48dp" />
+
+        </RelativeLayout>
+
+
+    </com.daimajia.swipe.SwipeLayout>
+</layout>

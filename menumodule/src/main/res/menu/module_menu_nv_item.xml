@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/nV_Menu_Item_Home"
+            android:checkable="true"
+            android:icon="@drawable/module_menu_ic_home_black_48dp"
+            android:title="Home" />
+    </group>
+
+    <item android:title="Person">
+        <menu>
+            <item
+                android:checkable="true"
+                android:icon="@drawable/module_menu_ic_information_black_48dp"
+                android:title="Information" />
+            <item
+                android:id="@+id/nV_Menu_Item_Upload_File"
+                android:icon="@drawable/module_menu_ic_file_upload_black_48dp"
+                android:title="Upload File" />
+        </menu>
+    </item>
+
+</menu>

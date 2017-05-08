@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="module_register_Primary">#3F51B5</color>
+    <color name="module_register_PrimaryDark">#303F9F</color>
+    <color name="module_register_Accent">#FF4081</color>
+    <color name="module_register_Red">#FF3030</color>
+    <color name="module_register_White">#FFFFFF</color>
+    <color name="module_register_Gray">#969696</color>
+    <color name="module_register_BuleLight">#B2DFEE</color>
+</resources>

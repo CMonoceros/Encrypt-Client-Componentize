@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="module_login_Primary">#3F51B5</color>
+    <color name="module_login_PrimaryDark">#303F9F</color>
+    <color name="module_login_Accent">#FF4081</color>
+    <color name="module_login_Red">#FF3030</color>
+    <color name="module_login_White">#FFFFFF</color>
+    <color name="module_login_Gray">#969696</color>
+</resources>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="zjm.cst.dhu.library.utils.others.BitmapUtil" />
+        <import type="android.view.View"/>
+
+        <variable
+            name="context"
+            type="android.content.Context" />
+
+        <variable
+            name="drawableId"
+            type="Integer" />
+
+        <variable
+            name="srcWidth"
+            type="Integer" />
+
+        <variable
+            name="srcHeight"
+            type="Integer" />
+
+        <variable
+            name="user"
+            type="zjm.cst.dhu.basemodule.model.User" />
+
+        <variable
+            name="file"
+            type="zjm.cst.dhu.basemodule.model.File" />
+
+        <variable
+            name="isMenu"
+            type="Boolean" />
+
+    </data>
+
+    <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/module_menu_dl_ui"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/module_menu_abl_ui"
+                android:layout_width="match_parent"
+                android:layout_height="256dip">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:id="@+id/module_menu_ctl"
+                    android:layout_width="match_parent"
+                    android:layout_height="256dip"
+                    app:expandedTitleMarginStart="30dip"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                    app:title="@{isMenu?user.name:file.name}">
+
+
+                    <TextView
+                        android:id="@+id/module_menu_tv_toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="50dip"
+                        android:paddingTop="50dip"
+                        android:text='@{isMenu?"":file.size+"\n \n"+file.uploadTime}'
+                        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+                    <ImageView
+                        android:id="@+id/module_menu_iv_toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@{BitmapUtil.adjustBackground(context,drawableId,srcWidth,srcHeight)}"
+                        android:fitsSystemWindows="true"
+                        android:visibility="@{isMenu?View.VISIBLE:View.GONE}" />
+
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/module_menu_tb_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_collapseMode="pin"
+                        app:layout_scrollFlags="scroll|enterAlways"
+                        app:navigationIcon="@drawable/module_menu_ic_list_black_48dp"
+                        app:title="@string/app_name" />
+
+                </android.support.design.widget.CollapsingToolbarLayout>
+            </android.support.design.widget.AppBarLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/module_menu_rl_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/module_menu_White"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            </RelativeLayout>
+        </android.support.design.widget.CoordinatorLayout>
+
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/module_menu_nv_person"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:menu="@menu/module_menu_nv_item" />
+
+    </android.support.v4.widget.DrawerLayout>
+</layout>

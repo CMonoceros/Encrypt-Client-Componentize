@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:loadingView="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="zjm.cst.dhu.library.utils.others.BitmapUtil" />
+
+        <variable
+            name="context"
+            type="android.content.Context" />
+
+        <variable
+            name="drawableId"
+            type="Integer" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/module_login_rl_ui"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/module_login_White"
+        android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+
+        <ImageView
+            android:id="@+id/module_login_iv_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dip"
+            android:src="@mipmap/ic_launcher" />
+
+
+        <EditText
+            android:id="@+id/module_login_et_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/module_login_iv_head"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dip"
+            android:ems="16"
+            android:hint="Id"
+            android:inputType="number" />
+
+
+        <EditText
+            android:id="@+id/module_login_et_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/module_login_et_id"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dip"
+            android:ems="16"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/module_login_b_login"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@+id/module_login_et_password"
+            android:layout_alignRight="@+id/module_login_et_password"
+            android:layout_below="@+id/module_login_et_password"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dip"
+            android:background="@drawable/module_login_shape_red_corners_button"
+            android:text="Login"
+            android:textColor="@color/module_login_White" />
+
+        <Button
+            android:id="@+id/module_login_b_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/module_login_b_login"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dip"
+            android:textColor="@color/module_login_Gray"
+            android:background="@null"
+            android:text="Register" />
+    </RelativeLayout>
+
+</layout>

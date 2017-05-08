@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Encrypt-Client-Componentize.iml" filepath="$PROJECT_DIR$/Encrypt-Client-Componentize.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basemodule/basemodule.iml" filepath="$PROJECT_DIR$/basemodule/basemodule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/loginmodule/loginmodule.iml" filepath="$PROJECT_DIR$/loginmodule/loginmodule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/menumodule/menumodule.iml" filepath="$PROJECT_DIR$/menumodule/menumodule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/registermodule/registermodule.iml" filepath="$PROJECT_DIR$/registermodule/registermodule.iml" />
+    </modules>
+  </component>
+</project>

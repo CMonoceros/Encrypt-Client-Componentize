@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/module_menu_rl_file_encrypt_exinf">
+
+    <EditText
+        android:id="@+id/module_menu_et_file_encrypt_exinf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLength="16"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:ems="16"/>
+
+</RelativeLayout>

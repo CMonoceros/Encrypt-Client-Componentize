@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="zjm.cst.dhu.library.utils.others.BitmapUtil" />
+
+        <variable
+            name="context"
+            type="android.content.Context" />
+
+        <variable
+            name="drawableId"
+            type="Integer" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/module_register_rl_ui"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/module_register_White"
+        android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+
+
+        <EditText
+            android:id="@+id/module_register_et_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dip"
+            android:ems="16"
+            android:hint="Name" />
+
+
+        <EditText
+            android:id="@+id/module_register_et_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/module_register_et_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dip"
+            android:ems="16"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+
+        <EditText
+            android:id="@+id/module_register_et_confirmPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/module_register_et_password"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dip"
+            android:ems="16"
+            android:hint="Confirm Password"
+            android:inputType="textPassword" />
+
+        <ImageView
+            android:id="@+id/module_register_iv_verification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/module_register_et_confirmPassword"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dip"
+            android:clickable="true"
+            android:paddingTop="15dip" />
+
+        <EditText
+            android:id="@+id/module_register_et_verification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/module_register_iv_verification"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dip"
+            android:ems="16"
+            android:hint="Verification Code" />
+
+        <Button
+            android:id="@+id/module_register_b_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignLeft="@id/module_register_et_name"
+            android:layout_alignRight="@id/module_register_et_name"
+            android:layout_below="@+id/module_register_et_verification"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dip"
+            android:background="@drawable/module_register_shape_bule_corners_button"
+            android:text="Register" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoadingView">
+        <attr name="loading_color" format="color" />
+        <attr name="radius_1" format="dimension"/>
+        <attr name="alpha_1" format="float"/>
+        <attr name="radius_2" format="dimension"/>
+        <attr name="alpha_2" format="integer"/>
+        <attr name="radius_3" format="dimension"/>
+        <attr name="alpha_3" format="integer"/>
+        <attr name="radius_4" format="dimension"/>
+        <attr name="alpha_4" format="integer"/>
+        <attr name="duration" format="float"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="ModuleLoginAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/module_login_Primary</item>
+        <item name="colorPrimaryDark">@color/module_login_PrimaryDark</item>
+        <item name="colorAccent">@color/module_login_Accent</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+</resources>
