@@ -40,7 +40,7 @@ public class NotificationReceiver extends BroadcastReceiver {
         int id = intent.getIntExtra("jobServiceID", 0);
         Messenger callback = intent.getParcelableExtra("Messenger");
         Message m = Message.obtain();
-        m.what = MenuActivity.JOB_SERVICE_CANCEL_CALL_BACK;
+        m.what = MenuActivity.Companion.getJOB_SERVICE_CANCEL_CALL_BACK();
         m.obj = this;
         jobScheduler.cancel(id);
         try {

@@ -17,6 +17,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 import rx.subscriptions.CompositeSubscription;
+import zjm.cst.dhu.basemodule.api.BaseUrl;
 import zjm.cst.dhu.library.utils.others.FileUtil;
 import zjm.cst.dhu.library.utils.network.DownloadFileResponseBody;
 import zjm.cst.dhu.library.utils.network.ProgressListener;
@@ -24,8 +25,6 @@ import zjm.cst.dhu.library.utils.network.UploadFileRequestBody;
 import zjm.cst.dhu.menumodule.MenuContract;
 import zjm.cst.dhu.menumodule.usecase.FileUseCase;
 import zjm.cst.dhu.menumodule.usecase.ResponseBodyUseCase;
-
-import static zjm.cst.dhu.basemodule.api.BaseUrl.DOWNLOADPATH;
 
 /**
  * Created by zjm on 2/9/2017.
@@ -81,7 +80,8 @@ public class MenuPresenter implements MenuContract.Presenter {
         map.put("file\"; filename=\"" + uploadFile.getName(), fileBody);
         map.put("owner", RequestBody.create(MediaType.parse("text/plain"), owner + ""));
         map.put("fileName", RequestBody.create(MediaType.parse("text/plain"), uploadFile.getName()));
-        map.put("fileSize", RequestBody.create(MediaType.parse("text/plain"), FileUtil.getAutoFileOrFilesSize(uploadFile.getPath())));
+        map.put("fileSize", RequestBody.create(MediaType.parse("text/plain"),
+                FileUtil.INSTANCE.getAutoFileOrFilesSize(uploadFile.getPath())));
         mFileUseCase.setFileMap(map);
         //使用RxJava方式调度任务并监听
         Subscription subscription = mFileUseCase.uploadFile()
@@ -117,6 +117,8 @@ public class MenuPresenter implements MenuContract.Presenter {
         final ProgressListener pl = progressListener;
         String[] s = downloadFile.getName().split("\\.");
         final String realName = s[0];
+        final String dir = FileUtil.INSTANCE.createDir(zjm.cst.dhu.basemodule.api.BaseUrl.Companion.getDOWNLOADPATH()
+                + f.getOwner() + "/Save/");
         Subscription subscription = mResponseBodyUseCase.downloadFile(downloadFile.getId() + "")
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
@@ -131,7 +133,7 @@ public class MenuPresenter implements MenuContract.Presenter {
                 .map(new Func1<InputStream, Boolean>() {
                     @Override
                     public Boolean call(InputStream inputStream) {
-                        String dir = FileUtil.createDir(DOWNLOADPATH + f.getOwner() + "/Save/");
+
                         File out = new File(dir + File.separator + realName + ".zip");
                         if (!out.exists()) {
                             try {

@@ -8,4 +8,8 @@ import rx.Observable;
 
 public interface BaseListEncryptTypeUseCase<T> {
     Observable<T> getEncryptType();
+
+    Observable<T> getEncryptTypeByOwner();
+
+    Observable<T> setEncryptTypeRate();
 }

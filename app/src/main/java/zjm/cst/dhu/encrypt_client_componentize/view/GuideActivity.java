@@ -44,7 +44,7 @@ public class GuideActivity extends BaseActivity {
         permissionList.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
         permissionList.add(Manifest.permission.READ_EXTERNAL_STORAGE);
         permissionList.add(Manifest.permission.READ_PHONE_STATE);
-        PermissionUtil.requestPermission(this, permissionList);
+        PermissionUtil.INSTANCE.requestPermission(this, permissionList);
     }
 
     @Override

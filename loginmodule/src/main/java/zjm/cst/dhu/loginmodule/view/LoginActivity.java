@@ -112,7 +112,7 @@ public class LoginActivity extends BaseActivity implements LoginContract.View {
             Uri uri = new Uri.Builder().scheme("MenuModule").build();
             Intent intent = new Intent(Intent.ACTION_VIEW, uri);
             Bundle bundle = new Bundle();
-            bundle.putSerializable(BaseUrl.EXTRAMENUUSER, user);
+            bundle.putSerializable(BaseUrl.Companion.getEXTRAMENUUSER(), user);
             intent.putExtras(bundle);
             startActivity(intent);
             overridePendingTransition(android.support.v7.appcompat.R.anim.abc_fade_in,

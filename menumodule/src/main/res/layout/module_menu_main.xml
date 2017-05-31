@@ -74,7 +74,7 @@
                         android:id="@+id/module_menu_iv_toolbar"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@{BitmapUtil.adjustBackground(context,drawableId,srcWidth,srcHeight)}"
+                        android:background="@{BitmapUtil.INSTANCE.adjustBackground(context,drawableId,srcWidth,srcHeight)}"
                         android:fitsSystemWindows="true"
                         android:visibility="@{isMenu?View.VISIBLE:View.GONE}" />
 

@@ -43,7 +43,7 @@ public class MenuJobService extends JobService {
     public int onStartCommand(Intent intent, int flags, int startId) {
         Messenger callback = intent.getParcelableExtra("Messenger");
         Message m = Message.obtain();
-        m.what = MenuActivity.JOB_SERVICE_CALL_BACK;
+        m.what = MenuActivity.Companion.getJOB_SERVICE_CALL_BACK();
         m.obj = this;
         try {
             callback.send(m);
@@ -59,13 +59,10 @@ public class MenuJobService extends JobService {
         menuContractPresenter.progressListenerShow();
         PersistableBundle persistableBundle = params.getExtras();
         int type = persistableBundle.getInt("type");
-        switch (type) {
-            case MenuActivity.UPLOAD_SERVICE_TYPE:
-                menuContractPresenter.uploadServiceWork();
-                break;
-            case MenuActivity.DOWNLOAD_SERVICE_TYPE:
-                menuContractPresenter.downloadServiceWork();
-                break;
+        if(type==MenuActivity.Companion.getUPLOAD_SERVICE_TYPE()){
+            menuContractPresenter.uploadServiceWork();
+        }else if(type==MenuActivity.Companion.getDOWNLOAD_SERVICE_TYPE()){
+            menuContractPresenter.downloadServiceWork();
         }
         jobFinished(params, false);
         return false;

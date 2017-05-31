@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: "kotlin-kapt"
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 25
@@ -27,6 +29,9 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    kapt "com.android.databinding:compiler:$gradle_version"
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -48,4 +53,8 @@ dependencies {
 
     compile 'io.reactivex:rxjava:1.0.14'
     compile 'io.reactivex:rxandroid:1.0.1'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }
