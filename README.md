@@ -10,6 +10,8 @@ Encrypt客户端组件化版
 
 debug版本可分别运行App，LoginModule，RegisterModule，MenuModule组件
 
+部分源码改写为Kotlin语言
+
 版本区别
 ------
 
@@ -19,5 +21,9 @@ debug版本可分别运行App，LoginModule，RegisterModule，MenuModule组件
 
 3.增加了导航界面
 
-4.其它同MVP版，请查看MVP版帮助文档：  https://github.com/CMonoceros/Encrypt-Client-MVP
+4.部分源码改写为Kotlin语言
+
+5.增加加密算法打分功能
+
+6.其它同MVP版，请查看MVP版帮助文档：  https://github.com/CMonoceros/Encrypt-Client-MVP
 
